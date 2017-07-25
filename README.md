@@ -11,11 +11,7 @@ Download the latest version of [Fiji](https://fiji.sc) and place the scripts int
 
 To make full use of these tools you will also need to install two additional ImageJ plugins:
 
-[Polynomial fit](https://imagej.nih.gov/ij/plugins/polynomial-fit/index.html)
-
-and
-
-[Polynomial shading corrector](http://www.optinav.info/Polynomial_Shading_Corrector.htm)
+[Polynomial fit](https://imagej.nih.gov/ij/plugins/polynomial-fit/index.html) and [Polynomial shading corrector](http://www.optinav.info/Polynomial_Shading_Corrector.htm)
 
 ## What do each of the scripts do?
 
