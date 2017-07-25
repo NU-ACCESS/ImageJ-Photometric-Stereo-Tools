@@ -15,9 +15,9 @@ To make full use of these tools you will also need to install two additional Ima
 
 ## What do each of the scripts do?
 
-**Photometric Stereo**: This script is the main workhorse tool. Its solves a set of linear equations using the least squares methods to produce a surface normal vector map. To use, produce a series of raking light images using the same methods described for making an ["RTI image"]( http://culturalheritageimaging.org/Technologies/RTI/). 
+**Photometric Stereo**: This script is the main workhorse tool. It solves a set of linear equations using the least squares methods to produce a surface normal vector map. To use, produce a series of raking light images using the same methods described for making an ["RTI image"]( http://culturalheritageimaging.org/Technologies/RTI/). 
 
-In ImageJ create a stack from the images, convert from RGB to 32-bit, and then run the script. You will be prompted to upload a text file that contains the lighting directions corresponding to each image in the stack (tab deliminted with no header information).
+In ImageJ, create a stack from the images, convert them from RGB to 32-bit, and then run the script. You will be prompted to upload a text file that contains the lighting directions corresponding to each image in the stack (tab deliminted with no header information).
 
 Outputs are an 8-bit RGB image showing the surface normal vectors and a stack of three 32-bit float images that are the x-, y- and z-gradient images.
 
