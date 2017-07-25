@@ -36,3 +36,7 @@ Calculated outputs are a lighting direction file that can be then be used with t
 The input to this script is the 32-bit float stack produced from the **Photometric Stereo** plugin. The output is a gray-scale image in which brightness maps height information. 
 
 **Lighting Direction Viewer**: In development. The input to this script is the 32-bit float stack produced from the **Photometric Stereo** plugin and it can produce any novel lighting direction with a mouse click. 
+
+## A Working Example
+
+see later
