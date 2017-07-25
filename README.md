@@ -15,15 +15,15 @@ To make full use of these tools you will also need to install two additional Ima
 
 ## What do each of the scripts do?
 
-**Photometric Stereo**: This script is the main workhorse tool. Its solves a set of linear equations using the least squares methods to produce a surface normal vector map. To use, create a series of raking light images using the same methods described for making an ["RTI image"]( http://culturalheritageimaging.org/Technologies/RTI/). 
+**Photometric Stereo**: This script is the main workhorse tool. Its solves a set of linear equations using the least squares methods to produce a surface normal vector map. To use, produce a series of raking light images using the same methods described for making an ["RTI image"]( http://culturalheritageimaging.org/Technologies/RTI/). 
 
-Create a stack from the images, covert from RGB to 32-bit, and then run the script. You will be prompted to upload a text file that contains the lighting directions that correspond to each image in the image stack (tab deliminted with no header information).
+In ImageJ create a stack from the images, convert from RGB to 32-bit, and then run the script. You will be prompted to upload a text file that contains the lighting directions corresponding to each image in the stack (tab deliminted with no header information).
 
 Outputs are an 8-bit RGB image showing the surface normal vectors and a stack of three 32-bit float images that are the x-, y- and z-gradient images.
 
 Beware that the script is still being optimized for speed. If you have a large image it may be better to crop it into sections and then apply to each crop separately.
 
-**Find Lights Blind**: Typically a mirror ball is used to capture the azimuthal and polar direction of the light source. In this script we utilize the fact that in most cases non-ideal near lights illuminate the object (e.g., an object is illuminated within a spherical envelope the radius of which is less than 3 times the largest dimension of the object). By fiting linear equations in the x and y directions of the image via the [Polynomial fit](https://imagej.nih.gov/ij/plugins/polynomial-fit/index.html) plugin, a map of how light drops-off accross the image is produced. By applying a 5 x 5 Sobel filter to the light drops-off map, the polar orientation of the light can be calculated. An assumption is made that all lights are approximately equidistant from the object in order to find the azimuthal light orientation. 
+**Find Lights Blind**: Typically a mirror ball is used to capture the azimuthal and polar direction of the light source. In this script we utilize the fact that in most cases non-ideal near lights illuminate the object (e.g., an object is illuminated within a spherical envelope, the radius of which is less than 3 times the largest dimension of the object). By fiting linear equations in the x and y directions of the image via the [Polynomial fit](https://imagej.nih.gov/ij/plugins/polynomial-fit/index.html) plugin, a map of how light drops-off accross the image is produced. By applying a 5 x 5 Sobel filter to the light drop-off maps, the polar orientation of the light can be calculated. An assumption is made that all lights are approximately equidistant from the object in order to find the azimuthal light orientation. 
 
 To use, apply the polynomial fit plugin to the entire stack of images and then run the **Find Lights Blind** script to the stack of light drop-off maps. 
 
