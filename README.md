@@ -38,5 +38,9 @@ The input to this script is the 32-bit float stack produced from the **Photometr
 **Lighting Direction Viewer**: In development. The input to this script is the 32-bit float stack produced from the **Photometric Stereo** plugin and it can produce any novel lighting direction with a mouse click. 
 
 ## A Working Example
+**Step 1:**
+Download the tiff stack [pedernal](https://www.dropbox.com/s/rd6hrf3nqu3mgp8/Pedernal.tif?dl=0)
 
-More to come.
+**Step 2:**
+
+
