@@ -1,7 +1,7 @@
 # ImageJ-Photometric-Stereo-Tools
 The set of tools described here are routinely used by the Northwestern University / Art Institute of Chicago Center for Scientific Studies in the Arts (NU-ACCESS) to make surface-shape measurements of works of art and specifically painted surfaces. The scripts were written in Python for use in ImageJ and are described in the forthcoming paper: Salvant et. al., "Photometric stereo by UV-induced fluorescence to detect protrusions on Georgia O’Keeffe’s paintings" in **Metal Soaps in Art – Conservation & Research**.
 
-We use ImageJ (Fiji) because it has a great user interface, its open source, and provides access to a powerful set of image processing tools that can be readily adapted for extracting surface gradients using the method of [photometric stereo](https://en.wikipedia.org/wiki/Photometric_stereo) or many other problems related to compuational imageing in cultural heritage. 
+We use ImageJ (Fiji) because it has a great user interface, its open source, and provides access to a powerful set of image processing tools that can be readily adapted for extracting surface gradients using the method of [photometric stereo](https://en.wikipedia.org/wiki/Photometric_stereo) or many other problems related to computational imageing in cultural heritage. 
 
 ## Getting Started with the Scripts
 
