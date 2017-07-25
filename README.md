@@ -3,7 +3,7 @@ The set of tools described here are routinely used by the Northwestern Universit
 
 We use ImageJ (Fiji) because it has a great user interface, its open source, and provides access to a powerful set of image processing tools that can be readily adapted for extracting surface gradients using the method of [photometric stereo](https://en.wikipedia.org/wiki/Photometric_stereo) or many other problems related to compuational imageing in cultural heritage. 
 
-## Getting Started with the scripts
+## Getting Started with the Scripts
 
 Download the latest version of [Fiji](https://fiji.sc) and place the scripts into the distribution plugins folder. Launch Fiji.
 
