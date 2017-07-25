@@ -21,11 +21,13 @@ Create a stack from the images and then run the script. You will be prompted to 
 
 Outputs are an 8bit RGB image showing the surface normal vectors and a stack of 32 bit float images that are the x-, y- and z-gradient images.
 
-**Find Lights Blind**: Typically a mirror ball is used to capture the azimuthal and polar direction of the light source. In this script we utilize the fact that in most cases we use non-ideal near lights to illuminate an object. By fiting linear equations in the x and y directions of the image via the [Polynomial fit](https://imagej.nih.gov/ij/plugins/polynomial-fit/index.html) (equivalent of a large gausian blur kernal) plugin a map of how light falls off accross the image is produced. 
+Beware that the script is still being optimized for speed. If you have a large image it may be better to crop it into sections and then apply to each crop separately.
 
-To use, apply the polynomial fit plugin to the entire stack of images and then run the **Find Lights Blind** script to the lighting drop off maps. 
+**Find Lights Blind**: Typically a mirror ball is used to capture the azimuthal and polar direction of the light source. In this script we utilize the fact that in most cases non-ideal near lights illuminate the object (e.g., one lights the object with a spherical envelope the radius of which is less than 3x largest dimension of the object). By fiting linear equations in the x and y directions of the image via the [Polynomial fit](https://imagej.nih.gov/ij/plugins/polynomial-fit/index.html) (equivalent of a large Gaussian blur kernal) plugin a map of how light falls off accross the image is produced. 
 
-Calculated outputs are a lighting direction files that can be then use with the **Photometric Stereo** script.
+To use, apply the polynomial fit plugin to the entire stack of images and then run the **Find Lights Blind** script to the lighting drop-off maps. 
+
+Calculated outputs are a lighting direction file that can be then be used with the **Photometric Stereo** script.
 
 **Find Lights Ball**: In development. This script uses a mirror ball to extract the same information as **Find Lights Blind** script.
 
