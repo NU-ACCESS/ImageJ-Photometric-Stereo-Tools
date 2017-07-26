@@ -15,7 +15,7 @@ To make full use of these tools you will also need to install two additional Ima
 
 ## What do each of the scripts do?
 
-**Photometric Stereo**: This script is the main workhorse tool. It solves a set of linear equations using the least squares methods to produce a surface normal vector map. To use, produce a series of raking light images using the same methods described for making an ["RTI image"]( http://culturalheritageimaging.org/Technologies/RTI/). 
+**Photometric Stereo**: This script is the main workhorse tool. It solves a set of linear equations using the least squares methods to produce a surface normal vector map. To use, capture a series of raking light images using the same methods described for making an ["RTI image"]( http://culturalheritageimaging.org/Technologies/RTI/). 
 
 In ImageJ, create a stack from the images, convert them from RGB to 32-bit, and then run the script. You will be prompted to upload a text file that contains the lighting directions corresponding to each image in the stack (tab deliminted with no header information).
 
@@ -39,7 +39,7 @@ The input to this script is the 32-bit float stack produced from the **Photometr
 
 ## A Working Example
 **Step 1:**
-Download the tiff stack [pedernal](https://www.dropbox.com/s/rd6hrf3nqu3mgp8/Pedernal.tif?dl=0). This is a stack of 31 images of a painting surface with the advanced formation of soap protrusions. Each image is illuminated with a unique lighting direction.
+Download the tiff stack [pedernal](https://www.dropbox.com/s/rd6hrf3nqu3mgp8/Pedernal.tif?dl=0). This is a stack of 31 images of a painting surface with the advanced formation of soap protrusions. Each image is illuminated with a unique lighting direction. Also note there is no mirror ball or other calibration sources. All information about the lighting is extracted directly from the images themselves.
 
 **Step 2:**
 In Fiji, convert the stack to 32 bits and run [Polynomial fit](https://imagej.nih.gov/ij/plugins/polynomial-fit/index.html). In the dialog box the degree x and degree y should both be set to 1. When prompted, select process the whole stack, press ok.
