@@ -50,7 +50,7 @@ In Fiji, convert the stack to 32 bits and run [Polynomial fit](https://imagej.ni
 The resulting image stack of light-drop off maps should be named "Poly_Fit_1_1Pedernal". For speed, reduce the dimensions of this stack so it has a width of 500 pixels. Run **Find_Lights_Blind.py** on this reduced size stack. Save the results file as "Light_Dir.txt".
 
 **Step 4:**
-Close "Poly_Fit_1_1Pedernal" (you are done with this). You may want to use the [Polynomial shading corrector](http://www.optinav.info/Polynomial_Shading_Corrector.htm) on Pedernal.tif, again with polynomial degrees of 1 in both x and y direction, to "flat field" the uneven illumination. Crop a region of Pedernal.tif for further processing (e.g., 1500 x 1500 pixels on a MacBook Pro with 16Gb RAM is pretty fast). Run **Photomertric_Stereo.py** on this region. You will be guided to select the "Light_Dir.txt" generated in the last step. The processing can take a while, especially for large files.
+Close "Poly_Fit_1_1Pedernal" (you are done with this). You may want to use the [Polynomial shading corrector](http://www.optinav.info/Polynomial_Shading_Corrector.htm) on Pedernal.tif to "flat field" the uneven illumination, again with polynomial degrees of 1 in both x and y direction. Crop a region of Pedernal.tif for further processing (e.g., 1500 x 1500 pixels on a MacBook Pro with 16Gb RAM is pretty fast). Run **Photomertric_Stereo.py** on this region. You will be guided to select the "Light_Dir.txt" generated in the last step. The processing can take a while, especially for large files.
 
 If desired you can save both the 8-bit and 32-bit "Surface Normal Map" images produced.
 
