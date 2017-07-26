@@ -39,8 +39,22 @@ The input to this script is the 32-bit float stack produced from the **Photometr
 
 ## A Working Example
 **Step 1:**
-Download the tiff stack [pedernal](https://www.dropbox.com/s/rd6hrf3nqu3mgp8/Pedernal.tif?dl=0)
+Download the tiff stack [pedernal](https://www.dropbox.com/s/rd6hrf3nqu3mgp8/Pedernal.tif?dl=0). This is a stack of 31 images of a painting surface with the advanced formation of soap protrusions. Each image is illuminated with a unique lighting direction.
 
 **Step 2:**
+In Fiji, convert the stack to 32 bits and run [Polynomial fit](https://imagej.nih.gov/ij/plugins/polynomial-fit/index.html). In the dialog box the degree x and degree should both be set to 1. When prompted to process the whole stack, press ok.
+
+**Step 3:**
+The resulting image stack should be named "Poly_Fit_1_1Pedernal". For speed change the dimensions of this stack so it has a width of 500 pixels. Run **Find_Lights_Blind.py** on this reduced size stack. Save the results file as "Light_Dir.txt".
+
+**Step 4:**
+Close "Poly_Fit_1_1Pedernal" (we are done with this). Crop a region of Pedernal.tif for further processing (e.g., 1000 x 1000 pixels). Run **Photomertric_Stereo.py** on this region. You will be guided to select the "Light_Dir.txt" generated in the last step. The processing can take a while, especially for large files.
+
+If desired you can save both the 8-bit and 32-bit "Surface Normal Map" images produced.
+
+**Step 5:**
+Close all images except 32-bit "Surface Normal Map". Run **Gradient_Integration.py**. The integration is done in frequency space, so the images are padded to 1024 x 1024. The image will be automatically cropped to this size. You may need to adjust the brightness/contrast of the "imaginary" image to see the corresponding height map. You can close the "real" image whcih has only been retained for experimental purposes.
+
+
 
 
