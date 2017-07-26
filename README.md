@@ -5,7 +5,7 @@ We use ImageJ (Fiji) because it has a great user interface, it is open source, a
 
 ## Getting Started with the Scripts
 
-Download the latest version of [Fiji](https://fiji.sc) and place the scripts into the distribution plugins folder. Launch Fiji or "refresh menus" if already running.
+Download the latest version of [Fiji](https://fiji.sc) and place the scripts into the plugins folder. Launch Fiji or "refresh menus" if already running.
 
 ### Prerequisites
 
