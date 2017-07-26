@@ -19,13 +19,13 @@ To make full use of these tools you will also need to install two additional Ima
 
 **Photometric Stereo**: This script is the main workhorse tool. It solves a set of linear equations, using the least squares method, to produce a surface normal vector map. To use, capture a series of raking light images using the same methods described for making an ["RTI image"]( http://culturalheritageimaging.org/Technologies/RTI/). 
 
-In ImageJ, create a stack from the images, convert them from RGB to 32-bit, and then run the script. You will be prompted to upload a text file that contains the lighting directions corresponding to each image in the stack (tab deliminted with no header information).
+In ImageJ, create a stack from the images, convert them from RGB to 32-bit, and then run the script. You will be prompted to upload a text file that contains the lighting directions corresponding to each image in the stack (tab delimited with no header information).
 
 Outputs are an RGB image showing the surface normal vectors (8-bit) and a stack of the x-, y-, and z-gradient images (32-bit).
 
 Beware that the script is still being optimized for speed. If you have a large image it may be better to crop it into sections and then apply to each crop separately.
 
-**Find Lights Blind**: Typically a mirror ball is used to capture the azimuthal and polar direction of the light source. In this script we utilize the fact that in most cases non-ideal near lights illuminate the object (e.g., an object is illuminated within a spherical envelope, the radius of which is less than 3 times the largest dimension of the object). By fiting linear equations in the x and y directions of the image via the [Polynomial fit](https://imagej.nih.gov/ij/plugins/polynomial-fit/index.html) plugin, a map of how light drops-off accross the image is produced. Applying a 5 x 5 Sobel filter to the light drop-off maps in both x and y directions gives the polar orientation of the light. An assumption is made that all lights are approximately equidistant from the object in order to find the azimuthal light orientation. 
+**Find Lights Blind**: Typically, a mirror ball is used to capture the azimuthal and polar direction of the light source. In this script, we utilize the fact that in most cases non-ideal near lights illuminate the object (e.g., an object is illuminated within a spherical envelope, the radius of which is less than 3 times the largest dimension of the object). By fitting linear equations in the x and y directions of the image via the [Polynomial fit](https://imagej.nih.gov/ij/plugins/polynomial-fit/index.html) plugin, a map of how light drops-off across the image is produced. Applying a 5 x 5 Sobel filter to the light drop-off maps in both x and y directions gives the polar orientation of the light. An assumption is made that all lights are approximately equidistant from the object to find the azimuthal light orientation. 
 
 To use, apply the polynomial fit plugin to the entire stack of images and then run the **Find Lights Blind** script to the stack of light drop-off maps. 
 
@@ -50,12 +50,13 @@ In Fiji, convert the stack to 32 bits and run [Polynomial fit](https://imagej.ni
 The resulting image stack of light-drop off maps should be named "Poly_Fit_1_1Pedernal". For speed, reduce the dimensions of this stack so it has a width of 500 pixels. Run **Find_Lights_Blind.py** on this reduced size stack. Save the results file as "Light_Dir.txt".
 
 **Step 4:**
-Close "Poly_Fit_1_1Pedernal" (we are done with this). You may want to use the [Polynomial shading corrector](http://www.optinav.info/Polynomial_Shading_Corrector.htm), again with polynomial degrees of 1 in both x and y direction to compensate for the uneven illumination. Crop a region of Pedernal.tif for further processing (e.g., 1500 x 1500 pixels on a Macbook Pro with 16Gb RAM this is pretty fast). Run **Photomertric_Stereo.py** on this region. You will be guided to select the "Light_Dir.txt" generated in the last step. The processing can take a while, especially for large files.
+Close "Poly_Fit_1_1Pedernal" (we are done with this). You may want to use the [Polynomial shading corrector](http://www.optinav.info/Polynomial_Shading_Corrector.htm), again with polynomial degrees of 1 in both x and y direction to compensate for the uneven illumination. Crop a region of Pedernal.tif for further processing (e.g., 1500 x 1500 pixels on a MacBook Pro with 16Gb RAM this is pretty fast). Run **Photomertric_Stereo.py** on this region. You will be guided to select the "Light_Dir.txt" generated in the last step. The processing can take a while, especially for large files.
 
 If desired you can save both the 8-bit and 32-bit "Surface Normal Map" images produced.
 
 **Step 5:**
-Close all images except 32-bit "Surface Normal Map". Run **Gradient_Integration.py**. Since integration is done in frequency space, the images are automatically padded to 1024 x 1024 (factors of 2). The image will be automatically cropped to this size (if another pad size is desired you will need to modify the script). Adjust the brightness/contrast of the "imaginary" image to see the corresponding height map. You can close the "real" image whcih has only been retained for experimental purposes.
+Close all images except 32-bit "Surface Normal Map". Run **Gradient_Integration.py**. Since integration is done in frequency space, the images are automatically padded to 1024 x 1024 (factors of 2). The image will be automatically cropped to this size (if another pad size is desired you will need to modify the script). Adjust the brightness/contrast of the "imaginary" image to see the corresponding height map. You can close the "real" image which has only been retained for experimental purposes.
 
 **Step 6:**
-Try the **Light_Direction_Viewer.py** by selecting the 32-bit "Surface Normal Map" and then running the script. Click on different parts of the image to generate a new illumination direction.
+Try the **Light_Direction_Viewer.py** by selecting the 32-bit "Surface Normal Map" and then running the script. Click on different parts of the image to generate a new illumination direction image.
+
