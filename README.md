@@ -55,7 +55,7 @@ Close "Poly_Fit_1_1Pedernal" (you are done with this). You may want to use the [
 If desired you can save both the 8-bit and 32-bit "Surface Normal Map" images produced.
 
 **Step 5:**
-Close all images except 32-bit "Surface Normal Map". Run **Gradient_Integration.py**. Since integration is done in frequency space, the images are automatically padded to 1024 x 1024 (factors of 2). The image will be automatically cropped to this size (if another pad size is desired you will need to modify the script). Adjust the brightness/contrast of the "imaginary" image to see the corresponding height map. You can close the "real" image which has only been retained for experimental purposes.
+Close all images except 32-bit "Surface Normal Map". Run **Gradient_Integration.py**. To facilitate integration in frequency space, the images are automatically padded to 1024 x 1024. The image will be automatically cropped to this size (if another pad size is desired you will need to modify the script). Adjust the brightness/contrast of the "imaginary" image to see the corresponding height map. You can close the "real" image which has only been retained for experimental purposes.
 
 **Step 6:**
 Try the **Light_Direction_Viewer.py** by selecting the 32-bit "Surface Normal Map" and then running the script. Click on different parts of the image to generate a new illumination direction image.
