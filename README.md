@@ -48,12 +48,12 @@ In Fiji, convert the stack to 32 bits and run [Polynomial fit](https://imagej.ni
 The resulting image stack of light-drop off maps should be named "Poly_Fit_1_1Pedernal". For speed, reduce the dimensions of this stack so it has a width of 500 pixels. Run **Find_Lights_Blind.py** on this reduced size stack. Save the results file as "Light_Dir.txt".
 
 **Step 4:**
-Close "Poly_Fit_1_1Pedernal" (we are done with this). Crop a region of Pedernal.tif for further processing (e.g., 1500 x 1500 pixels on a Macbook Pro with 16Gb RAM this is pretty fast). Run **Photomertric_Stereo.py** on this region. You will be guided to select the "Light_Dir.txt" generated in the last step. The processing can take a while, especially for large files.
+Close "Poly_Fit_1_1Pedernal" (we are done with this). You may want to use the [Polynomial shading corrector](http://www.optinav.info/Polynomial_Shading_Corrector.htm), again with polynomial degrees of 1 in both x and y direction to compensate for the uneven illumination. Crop a region of Pedernal.tif for further processing (e.g., 1500 x 1500 pixels on a Macbook Pro with 16Gb RAM this is pretty fast). Run **Photomertric_Stereo.py** on this region. You will be guided to select the "Light_Dir.txt" generated in the last step. The processing can take a while, especially for large files.
 
 If desired you can save both the 8-bit and 32-bit "Surface Normal Map" images produced.
 
 **Step 5:**
 Close all images except 32-bit "Surface Normal Map". Run **Gradient_Integration.py**. Since integration is done in frequency space, the images are automatically padded to 1024 x 1024 (factors of 2). The image will be automatically cropped to this size (if another pad size is desired you will need to modify the script). Adjust the brightness/contrast of the "imaginary" image to see the corresponding height map. You can close the "real" image whcih has only been retained for experimental purposes.
 
-
-
+**Step 6:**
+Try the **Light_Direction_Viewer.py** by selecting the 32-bit "Surface Normal Map" and then running the script. Click on different parts of the image to generate a new illumination direction.
