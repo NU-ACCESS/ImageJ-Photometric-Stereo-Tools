@@ -60,3 +60,8 @@ Close all images except 32-bit "Surface Normal Map". Run **Gradient_Integration.
 **Step 6:**
 Try the **Light_Direction_Viewer.py** by selecting the 32-bit "Surface Normal Map" and then running the script. Click on different parts of the image to generate a new illumination direction image.
 
+## Authors
+
+**Marc Walton** - *Initial work* - [NU-ACCESS](https://github.com/NU-ACCESS)
+
+
